@@ -16,7 +16,7 @@ const forecast = (address,callback) => {
             }else if(body.error){
                 callback(body.error,undefined)
             }else{
-                const outdata = body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability +'% chance of rain.'
+                const outdata = body.daily.data[0].summary + 'Temperature high: '+ body.daily.data[0].temperatureHigh + ' Temperature low:'+ body.daily.data[0].temperatureLow +' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability +'% chance of rain.'
 
                 const forecastData = {
                     outdata,
